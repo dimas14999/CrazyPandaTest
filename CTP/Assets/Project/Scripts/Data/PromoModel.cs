@@ -8,6 +8,7 @@ namespace RedPanda.Project.Data
 
         string IPromoModel.Title => _data.Title;
         string IPromoModel.GetIcon() => _data.Icon();
+        string IPromoModel.GetRarityBackground() => _data.RarityBackground();
         PromoType IPromoModel.Type => _data.Type;
         PromoRarity IPromoModel.Rarity => _data.Rarity;
         int IPromoModel.Cost => _data.Cost;

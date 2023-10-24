@@ -1,5 +1,3 @@
-using RedPanda.Project.Services;
-using RedPanda.Project.Services.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,13 +9,9 @@ namespace RedPanda.Project.UI
         private const string PROMOS_VIEW = "PromoView";
         
         [SerializeField] private Button _startButton;
-        private void Awake()
+        private void Start()
         {
             _startButton.onClick.AddListener(ShowPromos);
-            //Example for services
-            //var promoService = Container.Locate<IPromoService>();
-          //  promoService.GetPromos();
-          
         }
 
         private void ShowPromos()
