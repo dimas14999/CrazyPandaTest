@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Grace.DependencyInjection.Attributes;
 using RedPanda.Project.Interfaces;
 using RedPanda.Project.Services.Interfaces;
@@ -34,7 +35,9 @@ namespace RedPanda.Project.Core.Shop
 
         private void OnBuyPackClick()
         {
-            //Animation
+            DOTween.Sequence()
+                .Append(transform.DOScale(0.85f, 0.3f))
+                .Append(transform.DOScale(1, 0.3f));
             
             if (_userService.HasCurrency(_promoModel.Cost))
             {
