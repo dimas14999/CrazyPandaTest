@@ -30,8 +30,7 @@ namespace RedPanda.Project.UI
         private void Start()
         {
             _promoModels = _promoService.GetPromos();
-            _coinText.text = $"{_userService.Currency}";
-            _userService.OnChangedCurrency += count => _coinText.text = $"{count}";
+            UpdateCoinInfo();
             InitPacks();
         }
 
@@ -49,6 +48,12 @@ namespace RedPanda.Project.UI
         private List<IPromoModel> PromoModels(PromoType promoType)
         {
             return _promoModels.Where(x => x.Type == promoType).OrderByDescending(x => x.Rarity).ThenByDescending(x => x.Cost).ToList();
+        }
+        
+        private void UpdateCoinInfo()
+        {
+            _coinText.text = $"{_userService.Currency}";
+            _userService.OnChangedCurrency += count => _coinText.text = $"{count}";
         }
     }
 }
