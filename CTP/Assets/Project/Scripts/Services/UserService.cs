@@ -16,13 +16,13 @@ namespace RedPanda.Project.Services
         void IUserService.AddCurrency(int delta)
         {
             Currency += delta;
-            OnChangedCurrency?.Invoke(delta);
+            OnChangedCurrency?.Invoke(Currency);
         }
 
         void IUserService.ReduceCurrency(int delta)
         {
             Currency -= delta;
-            OnChangedCurrency?.Invoke(delta);
+            OnChangedCurrency?.Invoke(Currency);
         }
         
         bool IUserService.HasCurrency(int amount)
